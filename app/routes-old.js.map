@@ -1,0 +1,1 @@
+{"version":3,"file":"routes-old.js","sourceRoot":"","sources":["routes-old.ts"],"names":[],"mappings":"AACA,GAAG,CAAC,MAAM,CAAC,UAAS,cAAc;IAEhC,cAAc;SAEX,IAAI,CAAC,OAAO,EAAE;QACb,QAAQ,EAAE,gBAAgB;KAC3B,CAAC;SACD,IAAI,CAAC,SAAS,EAAE;QACf,QAAQ,EAAE,mBAAmB;KAC9B,CAAC;SACD,SAAS,CAAC,OAAO,CAAC,CAAA;AACvB,CAAC,CAAC,CAAA"}

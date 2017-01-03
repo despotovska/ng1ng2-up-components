@@ -1,0 +1,36 @@
+{
+  "name": "lightning-voter-demo",
+  "version": "1.0.0",
+  "description": "lightning talk voting app",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "tsc": "tsc -p . -w"
+  },
+  "keywords": [],
+  "author": "joe eames",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "2.4.1",
+    "@angular/compiler": "2.4.1",
+    "@angular/core": "2.4.1",
+    "@angular/forms": "2.4.1",
+    "@angular/http": "2.4.1",
+    "@angular/platform-browser": "2.4.1",
+    "@angular/platform-browser-dynamic": "2.4.1",
+    "@angular/router": "3.4.1",
+    "@angular/upgrade": "2.4.1",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.1",
+    "systemjs": "0.19.40",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.5.22",
+    "@types/core-js": "^0.9.35",
+    "@types/node": "^6.0.55",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.10"
+  }
+}
