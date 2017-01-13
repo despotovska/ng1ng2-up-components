@@ -9,5 +9,8 @@ app.config(function($routeProvider) {
     .when('/parent', {
       template: '<parent></parent>',
     })
+    .when('/settings', {
+      template: '<settings></settings>',
+    })
     .otherwise('/home')
 })

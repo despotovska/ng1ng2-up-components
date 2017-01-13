@@ -14,10 +14,12 @@ var forms_1 = require("@angular/forms");
 var static_1 = require("@angular/upgrade/static");
 var ng2Parent_component_1 = require("./ng2Parent.component");
 var ng1Child_component_1 = require("./ng1Child.component");
+var ng2_app_1 = require("./ng2-app");
+var settings_module_1 = require("./settings.module");
+var router_1 = require("@angular/router");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule.prototype.ngDoBootstrap = function () { };
     return AppModule;
 }());
 AppModule = __decorate([
@@ -25,18 +27,34 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             static_1.UpgradeModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            settings_module_1.SettingsModule,
+            router_1.RouterModule.forRoot([], { useHash: true, initialNavigation: false })
         ],
         entryComponents: [
             ng2Parent_component_1.ng2ParentComponent
         ],
         declarations: [
             ng2Parent_component_1.ng2ParentComponent,
-            ng1Child_component_1.ng1ChildComponent
+            ng1Child_component_1.ng1ChildComponent,
+            ng2_app_1.Ng2AppComponent
         ],
-        providers: []
+        providers: [
+            { provide: router_1.UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }
+        ],
+        bootstrap: [
+            ng2_app_1.Ng2AppComponent
+        ]
     }),
     __metadata("design:paramtypes", [])
 ], AppModule);
 exports.AppModule = AppModule;
+var Ng1Ng2UrlHandlingStrategy = (function () {
+    function Ng1Ng2UrlHandlingStrategy() {
+    }
+    Ng1Ng2UrlHandlingStrategy.prototype.shouldProcessUrl = function (url) { return url.toString().startsWith("/settings"); };
+    Ng1Ng2UrlHandlingStrategy.prototype.extract = function (url) { return url; };
+    Ng1Ng2UrlHandlingStrategy.prototype.merge = function (url, whole) { return url; };
+    return Ng1Ng2UrlHandlingStrategy;
+}());
 //# sourceMappingURL=app.module.js.map
