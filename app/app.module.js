@@ -12,11 +12,20 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var static_1 = require("@angular/upgrade/static");
-var ng2Parent_component_1 = require("./ng2Parent.component");
-var ng1Child_component_1 = require("./ng1Child.component");
 var ng2_app_1 = require("./ng2-app");
-var settings_module_1 = require("./settings.module");
+// import { SettingsModule } from './settings.module';
 var router_1 = require("@angular/router");
+var ng2Settings_component_1 = require("./ng2Settings.component");
+// this class needs to appear before it's used. classes aren't hoisted. 
+// probably best to put it in its own file & import it.
+var Ng1Ng2UrlHandlingStrategy = (function () {
+    function Ng1Ng2UrlHandlingStrategy() {
+    }
+    Ng1Ng2UrlHandlingStrategy.prototype.shouldProcessUrl = function (url) { return url.toString().startsWith("/settings"); };
+    Ng1Ng2UrlHandlingStrategy.prototype.extract = function (url) { return url; };
+    Ng1Ng2UrlHandlingStrategy.prototype.merge = function (url, whole) { return url; };
+    return Ng1Ng2UrlHandlingStrategy;
+}());
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,16 +37,19 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             static_1.UpgradeModule,
             forms_1.FormsModule,
-            settings_module_1.SettingsModule,
-            router_1.RouterModule.forRoot([], { useHash: true, initialNavigation: false })
+            // SettingsModule,
+            // the empty array here is fine, since the routes will be picked up from the imported modules
+            // in this case, it's the SettingsModule that has a route
+            router_1.RouterModule.forRoot([
+                { path: 'settings', component: ng2Settings_component_1.ng2SettingsComponent }
+            ], { useHash: true, initialNavigation: false })
         ],
         entryComponents: [
-            ng2Parent_component_1.ng2ParentComponent
+            ng2_app_1.Ng2AppComponent
         ],
         declarations: [
-            ng2Parent_component_1.ng2ParentComponent,
-            ng1Child_component_1.ng1ChildComponent,
-            ng2_app_1.Ng2AppComponent
+            ng2_app_1.Ng2AppComponent,
+            ng2Settings_component_1.ng2SettingsComponent
         ],
         providers: [
             { provide: router_1.UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }
@@ -49,12 +61,4 @@ AppModule = __decorate([
     __metadata("design:paramtypes", [])
 ], AppModule);
 exports.AppModule = AppModule;
-var Ng1Ng2UrlHandlingStrategy = (function () {
-    function Ng1Ng2UrlHandlingStrategy() {
-    }
-    Ng1Ng2UrlHandlingStrategy.prototype.shouldProcessUrl = function (url) { return url.toString().startsWith("/settings"); };
-    Ng1Ng2UrlHandlingStrategy.prototype.extract = function (url) { return url; };
-    Ng1Ng2UrlHandlingStrategy.prototype.merge = function (url, whole) { return url; };
-    return Ng1Ng2UrlHandlingStrategy;
-}());
 //# sourceMappingURL=app.module.js.map

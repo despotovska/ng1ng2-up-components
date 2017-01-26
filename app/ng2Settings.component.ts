@@ -1,15 +1,14 @@
 import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
   selector: 'settings',
   template: '<h2>This is the Settings Page</h2>'
 })
 export class ng2SettingsComponent {
 
-  constructor(
-    ) {
-    console.log('loaded ng2 component')
+  constructor(private router: Router) {
+    console.log('loaded ng2 component');
     
   }
   

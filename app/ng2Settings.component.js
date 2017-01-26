@@ -9,19 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var ng2SettingsComponent = (function () {
-    function ng2SettingsComponent() {
+    function ng2SettingsComponent(router) {
+        this.router = router;
         console.log('loaded ng2 component');
     }
     return ng2SettingsComponent;
 }());
 ng2SettingsComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'settings',
         template: '<h2>This is the Settings Page</h2>'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [router_1.Router])
 ], ng2SettingsComponent);
 exports.ng2SettingsComponent = ng2SettingsComponent;
 //# sourceMappingURL=ng2Settings.component.js.map

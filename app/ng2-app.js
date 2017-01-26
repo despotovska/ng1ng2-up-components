@@ -19,7 +19,7 @@ var Ng2AppComponent = (function () {
 Ng2AppComponent = __decorate([
     core_1.Component({
         selector: 'ng2-app',
-        template: "\n    <a href=\"#/settings\">Settings Route (ng2 route)</a>\n    <div class=\"ng-view\"></div>\n    <router-outlet></router-outlet>\n  "
+        template: "\n    <a href=\"#/settings\">Settings (ng2 route)</a>\n    <a href=\"#/home\">Home (ng1 route)</a>\n    <a href=\"#/users\">Users (ng1 route)</a>\n\n    <div class=\"ng-view\"></div>\n    <router-outlet></router-outlet>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], Ng2AppComponent);
