@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'settings',
-  template: '<h2>This is the Settings Page</h2>'
+  template: '<h2>This is the Settings Page</h2><nested></nested>'
 })
 export class ng2SettingsComponent {
 

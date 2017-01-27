@@ -6,6 +6,7 @@ import { Ng2AppComponent } from './ng2-app';
 // import { SettingsModule } from './settings.module';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { ng2SettingsComponent } from './ng2Settings.component';
+import { NestedNg1Component } from './nested-ng1.component';
 
 
 // this class needs to appear before it's used. classes aren't hoisted. 
@@ -33,7 +34,8 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
   ],
   declarations: [
     Ng2AppComponent,
-    ng2SettingsComponent
+    ng2SettingsComponent,
+    NestedNg1Component
   ],
   providers: [
     { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }

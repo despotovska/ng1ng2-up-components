@@ -14,8 +14,8 @@ app.config(function($routeProvider) {
     })
     // it's strange that an ng1 route is required for any ng2 routes, but this appears to be the case
     // it won't work when this is removed.
-    // .when('/settings', {
-    //   template: '<settings></settings>',
-    // })
+    .when('/settings', {
+      template: '<settings></settings>',
+    })
     .otherwise('/home')
 })

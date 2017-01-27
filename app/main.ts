@@ -10,7 +10,7 @@ declare var angular: angular.IAngularStatic;
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
   // upgrades & downgrades
-  angular.module('app').directive('settings', downgradeComponent({component: ng2SettingsComponent}));
+  // angular.module('app').directive('settings', downgradeComponent({component: ng2SettingsComponent}));
   
   const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
   upgrade.bootstrap(document.documentElement, ['app']);

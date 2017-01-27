@@ -8,6 +8,9 @@ app.config(function ($routeProvider) {
         .when('/users', {
         template: '<users></users>',
     })
+        .when('/settings', {
+        template: '<settings></settings>',
+    })
         .otherwise('/home');
 });
 //# sourceMappingURL=routes.js.map

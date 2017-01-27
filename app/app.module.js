@@ -16,6 +16,7 @@ var ng2_app_1 = require("./ng2-app");
 // import { SettingsModule } from './settings.module';
 var router_1 = require("@angular/router");
 var ng2Settings_component_1 = require("./ng2Settings.component");
+var nested_ng1_component_1 = require("./nested-ng1.component");
 // this class needs to appear before it's used. classes aren't hoisted. 
 // probably best to put it in its own file & import it.
 var Ng1Ng2UrlHandlingStrategy = (function () {
@@ -49,7 +50,8 @@ AppModule = __decorate([
         ],
         declarations: [
             ng2_app_1.Ng2AppComponent,
-            ng2Settings_component_1.ng2SettingsComponent
+            ng2Settings_component_1.ng2SettingsComponent,
+            nested_ng1_component_1.NestedNg1Component
         ],
         providers: [
             { provide: router_1.UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }

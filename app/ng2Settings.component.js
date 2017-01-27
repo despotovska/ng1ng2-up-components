@@ -20,7 +20,7 @@ var ng2SettingsComponent = (function () {
 ng2SettingsComponent = __decorate([
     core_1.Component({
         selector: 'settings',
-        template: '<h2>This is the Settings Page</h2>'
+        template: '<h2>This is the Settings Page</h2><nested></nested>'
     }),
     __metadata("design:paramtypes", [router_1.Router])
 ], ng2SettingsComponent);
