@@ -9,20 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var ng2SettingsComponent = (function () {
-    function ng2SettingsComponent(router) {
-        this.router = router;
+var NestedNg2Component = (function () {
+    function NestedNg2Component() {
         console.log('loaded ng2 component');
     }
-    return ng2SettingsComponent;
+    return NestedNg2Component;
 }());
-ng2SettingsComponent = __decorate([
+NestedNg2Component = __decorate([
     core_1.Component({
-        selector: 'settings',
-        template: '<h2>This is the Settings Page</h2><nested></nested><nested2></nested2>'
+        selector: 'nested2',
+        template: '<h2>This is a nested ng2 component</h2>'
     }),
-    __metadata("design:paramtypes", [router_1.Router])
-], ng2SettingsComponent);
-exports.ng2SettingsComponent = ng2SettingsComponent;
-//# sourceMappingURL=ng2Settings.component.js.map
+    __metadata("design:paramtypes", [])
+], NestedNg2Component);
+exports.NestedNg2Component = NestedNg2Component;
+//# sourceMappingURL=nested-ng2.component.js.map

@@ -17,6 +17,7 @@ var ng2_app_1 = require("./ng2-app");
 var router_1 = require("@angular/router");
 var ng2Settings_component_1 = require("./ng2Settings.component");
 var nested_ng1_component_1 = require("./nested-ng1.component");
+var nested_ng2_component_1 = require("./nested-ng2.component");
 // this class needs to appear before it's used. classes aren't hoisted. 
 // probably best to put it in its own file & import it.
 var Ng1Ng2UrlHandlingStrategy = (function () {
@@ -42,16 +43,21 @@ AppModule = __decorate([
             // the empty array here is fine, since the routes will be picked up from the imported modules
             // in this case, it's the SettingsModule that has a route
             router_1.RouterModule.forRoot([
-                { path: 'settings', component: ng2Settings_component_1.ng2SettingsComponent }
+                // { path: 'settings', component: ng2SettingsComponent }
+                { path: 'settings', children: [
+                        { path: '', component: ng2Settings_component_1.ng2SettingsComponent }
+                    ] },
             ], { useHash: true, initialNavigation: false })
         ],
         entryComponents: [
-            ng2_app_1.Ng2AppComponent
+            ng2_app_1.Ng2AppComponent,
+            nested_ng2_component_1.NestedNg2Component
         ],
         declarations: [
             ng2_app_1.Ng2AppComponent,
             ng2Settings_component_1.ng2SettingsComponent,
-            nested_ng1_component_1.NestedNg1Component
+            nested_ng1_component_1.NestedNg1Component,
+            nested_ng2_component_1.NestedNg2Component
         ],
         providers: [
             { provide: router_1.UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }
