@@ -20,7 +20,8 @@ var ng2SettingsComponent = (function () {
 ng2SettingsComponent = __decorate([
     core_1.Component({
         selector: 'settings',
-        template: '<h2>This is the Settings Page</h2><nested></nested><nested2></nested2>'
+        // you can nest ng2 components in a ng2 routed ng2 component
+        template: '<h2>This is the Settings Page</h2><nested2></nested2>'
     }),
     __metadata("design:paramtypes", [router_1.Router])
 ], ng2SettingsComponent);

@@ -23,7 +23,7 @@ var nested_ng2_component_1 = require("./nested-ng2.component");
 var Ng1Ng2UrlHandlingStrategy = (function () {
     function Ng1Ng2UrlHandlingStrategy() {
     }
-    Ng1Ng2UrlHandlingStrategy.prototype.shouldProcessUrl = function (url) { return url.toString().startsWith("/settings"); };
+    Ng1Ng2UrlHandlingStrategy.prototype.shouldProcessUrl = function (url) { console.log('match', url.toString().startsWith("/settings"), url.toString()); return url.toString().startsWith("/settings"); };
     Ng1Ng2UrlHandlingStrategy.prototype.extract = function (url) { return url; };
     Ng1Ng2UrlHandlingStrategy.prototype.merge = function (url, whole) { return url; };
     return Ng1Ng2UrlHandlingStrategy;
@@ -47,11 +47,11 @@ AppModule = __decorate([
                 { path: 'settings', children: [
                         { path: '', component: ng2Settings_component_1.ng2SettingsComponent }
                     ] },
-            ], { useHash: true, initialNavigation: false })
+            ], { useHash: true })
         ],
         entryComponents: [
-            ng2_app_1.Ng2AppComponent,
-            nested_ng2_component_1.NestedNg2Component
+            // Ng2AppComponent,
+            nested_ng2_component_1.NestedNg2Component,
         ],
         declarations: [
             ng2_app_1.Ng2AppComponent,

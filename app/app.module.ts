@@ -13,7 +13,7 @@ import { NestedNg2Component } from './nested-ng2.component';
 // this class needs to appear before it's used. classes aren't hoisted. 
 // probably best to put it in its own file & import it.
 class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
-  shouldProcessUrl(url) { return url.toString().startsWith("/settings"); }
+  shouldProcessUrl(url) { console.log('match', url.toString().startsWith("/settings"), url.toString()); return url.toString().startsWith("/settings"); }
   extract(url) { return url; }
   merge(url, whole) { return url; }
 }
@@ -30,13 +30,14 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
       // { path: 'settings', component: ng2SettingsComponent }
       { path: 'settings', children: [
         { path: '', component: ng2SettingsComponent }
-        // { path: 'pagesize', component: PageSizeCmp }
       ] },
-    ], {useHash: true, initialNavigation: false })
+    // ])
+    ], {useHash: true })
   ],
   entryComponents: [
-    Ng2AppComponent,
-    NestedNg2Component
+    // Ng2AppComponent,
+    NestedNg2Component,
+    // ng2SettingsComponent
   ],
   declarations: [
     Ng2AppComponent,

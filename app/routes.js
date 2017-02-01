@@ -8,9 +8,15 @@ app.config(function ($routeProvider) {
         .when('/users', {
         template: '<users></users>',
     })
-        .when('/settings', {
-        template: '<settings></settings>',
-    })
-        .otherwise('/home');
+        .when('/', {
+        template: '<home ></home>',
+    });
+    // .when('/settings', {
+    //   template: '<settings></settings>',
+    // })
+    // !!!!!!!!!!!!!
+    // You cannot have an otherwise section. If so, then ng2 routing doesn't work with ng1 routing
+    // !!!!!!!!!!!!!
+    // .otherwise('/home')
 });
 //# sourceMappingURL=routes.js.map

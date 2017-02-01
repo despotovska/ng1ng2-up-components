@@ -12,10 +12,17 @@ app.config(function($routeProvider) {
     .when('/users', {
       template: '<users></users>',
     })
-    // it's strange that an ng1 route is required for any ng2 routes, but this appears to be the case
-    // it won't work when this is removed.
-    .when('/settings', {
-      template: '<settings></settings>',
-    })
-    .otherwise('/home')
+    .when('/', {
+      template: '<home ></home>',
+    });
+
+
+    // .when('/settings', {
+    //   template: '<settings></settings>',
+    // })
+
+    // !!!!!!!!!!!!!
+    // You cannot have an otherwise section. If so, then ng2 routing doesn't work with ng1 routing
+    // !!!!!!!!!!!!!
+    // .otherwise('/home')
 })
