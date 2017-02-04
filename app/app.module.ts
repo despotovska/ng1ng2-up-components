@@ -46,7 +46,8 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     NestedNg2Component
   ],
   providers: [
-    { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }
+    { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy },
+    { provide: '$scope', useExisting: '$rootScope' } // I have to do this cause we do not provide $scope in the module. Seems to be broken.
   ],
   bootstrap: [
     Ng2AppComponent

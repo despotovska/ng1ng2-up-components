@@ -60,7 +60,8 @@ AppModule = __decorate([
             nested_ng2_component_1.NestedNg2Component
         ],
         providers: [
-            { provide: router_1.UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy }
+            { provide: router_1.UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy },
+            { provide: '$scope', useExisting: '$rootScope' } // I have to do this cause we do not provide $scope in the module. Seems to be broken.
         ],
         bootstrap: [
             ng2_app_1.Ng2AppComponent
